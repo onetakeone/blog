@@ -1,0 +1,4 @@
+	<table class="table_1"><tr><td><font size="3"><b><%= comment.commenter %></font></b></td></tr>	
+	<tr><td><%= comment.body %></td></tr>
+	<tr><td><%= link_to 'Delete', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %> </td></tr>
+	</table>
