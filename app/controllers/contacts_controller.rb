@@ -2,7 +2,6 @@ class ContactsController < ApplicationController
   def new
   end
   def create
-     # render plain: params[:contact].inspect
     @contact = Contact.new(contact_params)
     if @contact.valid?
       @contact.save
@@ -13,6 +12,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:email, :message)
+    params.require(:contact).permit(:name, :email, :message)
   end
 end

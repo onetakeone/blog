@@ -1,0 +1,15 @@
+<h2>Articles</h2>
+
+<%= link_to new_article_path do %>
+	<button type="button">Post</button>
+<%end%>
+
+<% @article.each do |item|%>
+	<table class = "table_article">
+	<tr><td><h3><%= item.title %></h3></td></tr>
+	<tr><td><%= item.text %></td></tr>
+	</table>
+	<%= item.created_at %>
+	<%= link_to 'Read more', article_path(item) %> <%= link_to 'Edit', edit_article_path(item) %><br />
+	
+<%end%>
