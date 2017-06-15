@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  
   def index
     @article = Article.all
   end
@@ -30,7 +31,7 @@ class ArticlesController < ApplicationController
     if @article.valid?
       @article.save
     else
-      render action: 'new'
+      render 'new'
     end
   end
 
