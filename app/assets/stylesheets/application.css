@@ -17,3 +17,47 @@
 * {
 	font-family: Helvetica;
 }
+
+.menu {
+	margin-top: 20px;
+	margin-left: -35px;
+	text-align: center;
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: black;
+}
+
+/* mouse over link */
+a:hover {
+    color: black;
+}
+
+/* selected link */
+a:active {
+    color: black;
+}
+
+.button {
+    background-color: #eee;
+    color: white;
+    padding: 14px 35px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid #fff;
+    hover: black;
+    border-radious: 2px;
+}
+
+.button:hover {
+	 background-color: #fff;
+	 border: 2px solid #000;
+	 color: black;
+}
