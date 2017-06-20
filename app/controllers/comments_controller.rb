@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
-  def index
-  end
+  # def index
+  # end
 
-  def new
-    @comment = Comment.new
-  end
+  # def new
+  #   @comment = Comment.new
+  # end
 
   def create
     @article = Article.find(params[:article_id])

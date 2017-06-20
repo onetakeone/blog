@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article
     else
-      render 'edit'
+      render action: 'edit'    #returns action edit (def edit), saving @article variable
     end 
   end
 
@@ -31,7 +31,7 @@ class ArticlesController < ApplicationController
     if @article.valid?
       @article.save
     else
-      render 'new'
+      render action: 'new'
     end
   end
 
