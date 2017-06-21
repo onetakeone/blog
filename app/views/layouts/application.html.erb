@@ -9,13 +9,19 @@
   </head>
 
   <body>    
+
     <header>
       <ul class='menu'>
-      <%= link_to 'home', home_index_path %> | <%= link_to 'articles', articles_path %> | <a href="/contacts">contact</a> | <a href="/about">about</a> | <a href="/terms">terms</a>
+      <%= link_to 'home', home_index_path %> | <%= link_to 'articles', articles_path %> | <a href="/contacts">contact</a> | <a href="/about">about</a> | <a href="/terms">terms</a> | <%= link_to 'login', new_user_session_path %> | <%= link_to 'logout', destroy_user_session_path, method: :delete %>
       </ul>
     </header>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
     <%= yield %>
+
+    <div align=center><br />
+    <p class="notice"><i><%= notice %></i></p>
+    <p class="alert"><%= alert %></p>
+    </div>
+    
   </body>
 </html>
