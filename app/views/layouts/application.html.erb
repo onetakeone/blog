@@ -9,7 +9,13 @@
   </head>
 
   <body>
-  	<ul class='menu'><%= link_to 'home', controller: 'home' %> | <%= link_to 'articles', controller: 'articles' %> | <a href="/contacts">contact</a> | <a href="/about">about</a> | <a href="/terms">terms</a> </ul>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <ul class='menu'><%= link_to 'home', controller: 'home' %> | <%= link_to 'articles', controller: 'articles' %> | <a href="/contacts">contact</a> | <a href="/about">about</a> | <a href="/terms">terms</a> </ul>
+
+ 
+
     <%= yield %>
   </body>
 </html>
