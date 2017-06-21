@@ -8,12 +8,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <ul class='menu'><%= link_to 'home', controller: 'home' %> | <%= link_to 'articles', controller: 'articles' %> | <a href="/contacts">contact</a> | <a href="/about">about</a> | <a href="/terms">terms</a> </ul>
-
+  <body>    
+  <header>
+      <ul class='menu'><%= link_to 'home', home_index_path %> | <%= link_to 'articles', articles_path %> | <a href="/contacts">contact</a> | <a href="/about">about</a> | <a href="/terms">terms</a> </ul>
+  </header>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
  
 
     <%= yield %>
