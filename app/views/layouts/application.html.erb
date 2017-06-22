@@ -12,7 +12,7 @@
 
     <header>
       <ul class='menu'>
-      <%= link_to 'home', home_index_path %> | <%= link_to 'articles', articles_path %> | <a href="/contacts">contact</a> | <a href="/about">about</a> | <a href="/terms">terms</a> | <%= link_to 'login', new_user_session_path %> | <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+      <%= link_to 'home', home_index_path %> | <%= link_to 'articles', articles_path %> | <a href="/contacts">contact</a> | <a href="/about">about</a> | <a href="/terms">terms</a> | <% if user_signed_in? %> <%= link_to 'logout', destroy_user_session_path, method: :delete %> <b><%= current_user.email %></b> <% else %> <%= link_to 'login', new_user_session_path %> <% end %>
       </ul>
     </header>
 
