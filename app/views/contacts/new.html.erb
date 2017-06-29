@@ -1,25 +1,8 @@
 <h2>Contact us</h2>
-
+<p>as <b><%= current_user.username %></b></p>
 
 <%= form_for :contact, url: '/contacts' do |f| %>
-	<% if @contact && @contact.errors.any? %>
-	<p>
-		<ul>
-		<%= @contact.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-		<% end %>
-		</ul>
-	</p>
-	<% end %>
 	
-	<p> 
-		<%= f.label :name %>
-		<%= f.text_field :name %>
-	</p>
-	<p> 
-		<%= f.label :email %>
-		<%= f.text_field :email %>
-	</p>
 	<p> 
 		<%= f.label :message %>
 		<%= f.text_area :message %>
@@ -27,4 +10,5 @@
 	<p>
 		<%= f.submit 'Contact us', :class => 'button'  %>
 	</p>
+
 <% end %>

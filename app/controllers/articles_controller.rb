@@ -4,14 +4,26 @@ class ArticlesController < ApplicationController
 
   def index
     @article = Article.all
+    @user = User.all
   end
 
   def show
     @article = Article.find(params[:id])    
+    @user = User.all
   end
 
   def new 
     @article = Article.new
+  end
+
+  def create
+    @article = Article.new(article_params)
+    @article.user_id = current_user.id
+    if @article.valid?
+      @article.save
+    else
+      render action: 'new'
+    end
   end
 
   def edit
@@ -28,15 +40,6 @@ class ArticlesController < ApplicationController
     end 
   end
 
-  def create
-    @article = Article.new(article_params)
-    if @article.valid?
-      @article.save
-    else
-      render action: 'new'
-    end
-  end
-
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
@@ -46,7 +49,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :user_id)
   end
 
 end

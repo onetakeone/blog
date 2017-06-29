@@ -1,15 +1,20 @@
-<table>
-<tr><td><h3>
-<%= @article.title %>
-</h3></td></tr>
-<tr><td><%= @article.text %></td></tr>
+<table class = "table_article">
+	<tr>
+		<td>
+			<h3><%= @article.title %></h3> <h5><i>by <%= @user.find(@article.user_id).username %></i></h5>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= @article.text %>
+		</td>
+	</tr>
 </table>
 
-Comments:
+
 <%= render @article.comments %>
 
-Add a comment as:
+
 <%= render 'comments/form' %>
 
-<%= link_to 'Back', articles_path %> |
-<%= link_to 'Edit', edit_article_path %>	
+<%= link_to 'Back', articles_path %> | <% if @article.user_id == current_user.id %> <%= link_to 'Edit', edit_article_path %> <% end %>	

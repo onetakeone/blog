@@ -1,6 +1,7 @@
+
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
-    <b><%= current_user.username %></b>
+    <b><%= current_user.username %>:</b>
   </p>
   <p>
     <%= f.text_area :body %>

@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
   end
  
   def destroy
+    @user = User.all
     @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy

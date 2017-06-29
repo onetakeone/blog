@@ -1,3 +1,4 @@
+<div class = "body">
 <h2>Articles</h2>
 
 <%= link_to new_article_path do %>
@@ -6,10 +7,28 @@
 
 <% @article.each do |item|%>
 	<table class = "table_article">
-	<tr><td><h3><%= item.title %></h3></td></tr>
-	<tr><td><%= item.text %></td></tr>
+
+		<tr>
+			<td>
+				<h3><%= item.title %></h3> 
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<%= truncate(item.text, length: 100) %>			
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				<%= item.created_at %>
+				<%= link_to 'Read more', article_path(item) %> | <% if item.user_id == current_user.id %> <%= link_to 'Edit', edit_article_path(item) %> <% end %><br />
+				<h5><i>by <%= @user.find(item.user_id).username %></i></h5>
+			</td>
+		</tr>
+
 	</table>
-	<%= item.created_at %>
-	<%= link_to 'Read more', article_path(item) %> | <%= link_to 'Edit', edit_article_path(item) %><br />
-	
 <%end%>
+
+</div>
