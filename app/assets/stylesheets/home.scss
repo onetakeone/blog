@@ -2,8 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .main {
-	margin-top: 100px;
-	text-align: center;
+	text-align: center;	
+	height: 600px;
+	color: white;
+	font-size: 25px;
+	background-image: url(/images/background.jpg);
+	vertical-align: center;
+}
+
+.main-t {
+
 }
 
