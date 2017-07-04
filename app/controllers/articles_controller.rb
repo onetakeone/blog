@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!
 
   def index
     @article = Article.all
